@@ -2,7 +2,7 @@ package com.java8.features;
 
 import java.util.stream.IntStream;
 
-public class Java7VsJava8Examples {
+public class Java7VsJava8Examples1 {
     public static void main(String[] args) {
 
         // Before Java 8
