@@ -15,13 +15,27 @@ public class ConsumerPersonExample {
 
     static Consumer<Person> c3 = (p) -> System.out.println(p.getHobbies());
 
+    static List<Person> personList = PersonRepository.getAllPerson();
+
+    static void printNameAndHobbies(){
+        personList.forEach(c2.andThen(c3));
+    }
+
+    static void printWithCondition(){
+        personList.forEach(p ->{ // iterate person
+            if(p.getGender().equals("Male") && p.getHeight() >= 140) {
+                c2.andThen(c3).accept(p);
+            }
+        });
+    }
+
     public static void main(String[] args) {
-//        List<Person> personList = PersonRepository.getAllPerson();
 //        c1.accept(PersonRepository.getPerson());
 //        c2.accept(PersonRepository.getPerson());
 //        c3.accept(PersonRepository.getPerson());
-        c1.andThen(c2.andThen(c3)).accept(PersonRepository.getPerson());
-
-
+//        c1.andThen(c2.andThen(c3)).accept(PersonRepository.getPerson());
+//        printNameAndHobbies();
+        printWithCondition();
     }
+
 }
