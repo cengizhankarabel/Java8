@@ -16,4 +16,8 @@ public class PersonRepository {
         Person p7 = new Person("Campell", 165, 1548, "Male", 1, Arrays.asList("Swimming", "Tennis"));
         return Arrays.asList(p1,p2,p3,p4,p5,p6);
     }
+
+    public static Person getPerson(){
+        return new Person("John", 165, 2000, "Male", 2, Arrays.asList("Cricket", "Swimming", "Tennis"));
+    }
 }
